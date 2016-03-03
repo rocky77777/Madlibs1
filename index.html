@@ -1,0 +1,45 @@
+<DOCTYPE!>
+<html ng-app=''>
+<head>
+	<script src="https://code.angularjs.org/1.3.10/angular.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class='main'>
+		<div class='header'>
+			<div class='left'>
+				<div class='smileyImage'>
+					<img src='smiley.PNG' />
+				</div>
+			</div>
+			<div class='right'>
+				<img src='madlibs' />
+				<h1>Automate This!</h1>
+			</div>
+		</header>
+		<section class='input'>
+			<h1>Provide the following words:</h1>
+			<div class="row">
+				<input type="text" ng-model="maleName" placeholder="Male Name">
+				<input type="text" ng-model="dirtyTask" placeholder="Dirty Task">
+				<input type="text" ng-model="obnoxiousCelebrity" placeholder="Obnoxious Celebrity">
+			</div>
+			<div class="row">
+				<input type="text" ng-model="jobTitle" placeholder="Job Title">
+				<input type="text" ng-model="celebrity" placeholder="Celebrity">
+				<input type="text" ng-model="hugeNumber" placeholder="Huge Number">
+			</div>
+			<div class="row">
+				<input type="text" ng-model="tediousTask" placeholder="Tedious Task">
+				<input type="text" ng-model="uselessSkill" placeholder="Useless Skill">
+				<input type="text" ng-model="adjective" placeholder="Adjective">
+			</div>
+		</section>
+		<hr/>
+		<section class='output'>
+			<p>{{ maleName }} was a {{jobTitle}} who loved technology. Although he loved parts of his job, he absolutely hated {{tediousTask}} and {{dirtyTask}}. So, {{maleName}} met with his life mentor, {{celebrity}}, who told him to study {{uselessSkill}} at a university. The local University didn't offer a course on {{uselessSkill}} so he studied hardware instead.</p>
+			<p>What a great decision! With his new skills, {{ maleName }} built a(n) {{adjective}} robot named {{obnoxiousCelebrity}} that not only loved {{dirtyTask}} but did it {{hugeNumber}} times faster.</p>
+		</section>
+	</div>
+</body>
+</html>
