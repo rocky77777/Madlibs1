@@ -19,9 +19,13 @@
 			</div>
 		</header>
 		<section class='input'>
+			<label for="male">Male</label>
+			<input type="radio" name="gender" ng-model="data.gender" value="he" />
+			<label for="female">Female</label>
+			<input type="radio" name="gender" ng-model="data.gender" value="she" /><br>
 			<h1>Provide the following words:</h1>
 			<div class="row">
-				<input type="text" ng-model="maleName" placeholder="Male Name">
+				<input type="text" ng-model="name" placeholder="Name">
 				<input type="text" ng-model="dirtyTask" placeholder="Dirty Task">
 				<input type="text" ng-model="obnoxiousCelebrity" placeholder="Obnoxious Celebrity">
 			</div>
@@ -38,8 +42,8 @@
 		</section>
 		<hr/>
 		<section class='output'>
-			<p>{{ maleName }} was a {{jobTitle}} who loved technology. Although he loved parts of his job, he absolutely hated {{tediousTask}} and {{dirtyTask}}. So, {{maleName}} met with his life mentor, {{celebrity}}, who told him to study {{uselessSkill}} at a university. The local University didn't offer a course on {{uselessSkill}} so he studied hardware instead.</p>
-			<p>What a great decision! With his new skills, {{ maleName }} built a(n) {{adjective}} robot named {{obnoxiousCelebrity}} that not only loved {{dirtyTask}} but did it {{hugeNumber}} times faster.</p>
+			<p>{{ name }} was a {{jobTitle}} who loved technology. Although {{data.gender}} loved parts of the job, {{data.gender}} absolutely hated {{tediousTask}} and {{dirtyTask}}. So, {{name}} met with a life mentor, {{celebrity}}, who said to study {{uselessSkill}} at a university. The local University didn't offer a course on {{uselessSkill}} so {{data.gender}} studied hardware instead.</p>
+			<p>What a great decision! With these new skills, {{ name }} built a(n) {{adjective}} robot named {{obnoxiousCelebrity}} that not only loved {{dirtyTask}} but did it {{hugeNumber}} times faster.</p>
 		</section>
 	</div>
 </body>
