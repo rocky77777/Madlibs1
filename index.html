@@ -24,24 +24,26 @@
 			<label for="female">Female</label>
 			<input type="radio" name="gender" ng-model="data.gender" value="she" /><br>
 			<h1>Provide the following words:</h1>
-			<div class="row">
-				<input type="text" ng-model="name" placeholder="Name">
-				<input type="text" ng-model="dirtyTask" placeholder="Dirty Task">
-				<input type="text" ng-model="obnoxiousCelebrity" placeholder="Obnoxious Celebrity">
-			</div>
-			<div class="row">
-				<input type="text" ng-model="jobTitle" placeholder="Job Title">
-				<input type="text" ng-model="celebrity" placeholder="Celebrity">
-				<input type="text" ng-model="hugeNumber" placeholder="Huge Number">
-			</div>
-			<div class="row">
-				<input type="text" ng-model="tediousTask" placeholder="Tedious Task">
-				<input type="text" ng-model="uselessSkill" placeholder="Useless Skill">
-				<input type="text" ng-model="adjective" placeholder="Adjective">
-			</div>
-			<br />
-			<hr />
-			<button class='generateButton' ng-click="hideInputShowOutput()">Generate my Mad Lib</button>
+			<form name="madLibsForm" required>
+				<div class="row">
+					<input type="text" ng-model="name" placeholder="Name">
+					<input type="text" ng-model="dirtyTask" placeholder="Dirty Task">
+					<input type="text" ng-model="obnoxiousCelebrity" placeholder="Obnoxious Celebrity">
+				</div>
+				<div class="row">
+					<input type="text" ng-model="jobTitle" placeholder="Job Title">
+					<input type="text" ng-model="celebrity" placeholder="Celebrity">
+					<input type="text" ng-model="hugeNumber" placeholder="Huge Number">
+				</div>
+				<div class="row">
+					<input type="text" ng-model="tediousTask" placeholder="Tedious Task">
+					<input type="text" ng-model="uselessSkill" placeholder="Useless Skill">
+					<input type="text" ng-model="adjective" placeholder="Adjective">
+				</div>
+				<br />
+				<hr />
+				<button class='generateButton' ng-click="hideInputShowOutput()">Generate my Mad Lib</button>
+			</form>
 		</section>
 		<section class='output' ng-show="showMadLibs">
 			<p>{{ name }} was a {{jobTitle}} who loved technology. Although {{data.gender}} loved parts of the job, {{data.gender}} absolutely hated {{tediousTask}} and {{dirtyTask}}. So, {{name}} met with a life mentor, {{celebrity}}, who said to study {{uselessSkill}} at a university. The local University didn't offer a course on {{uselessSkill}} so {{data.gender}} studied hardware instead.</p>
