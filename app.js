@@ -1,23 +1,25 @@
 angular.module("myApp", [])
 .controller("myCtrl", function($scope) {
+	$scope.data = {};
+	$scope.submitted = false;
 	$scope.showMadLibs = false;
 	$scope.showInputBoxes = true;
+
 	$scope.hideInputShowOutput = function() {
-		$scope.showMadLibs = true;
-		$scope.showInputBoxes = false;
+		$scope.submitted = true;
+		if($scope.madLibsForm.$valid) {
+			$scope.showMadLibs = true;
+			$scope.showInputBoxes = false;
+			$scope.submitted = false;
+		}
+
+	}
+	$scope.submit = function() {
+		hideInputShowOutput();
 	}
 	$scope.startNewGame = function() {
 		$scope.showMadLibs = false;
 		$scope.showInputBoxes = true;
-		$scope.name = null;
-		$scope.dirtyTask = null;
-		$scope.obnoxiousCelebrity = null;
-		$scope.jobTitle = null;
-		$scope.celebrity = null;
-		$scope.hugeNumber = null;
-		$scope.tediousTask = null;
-		$scope.uselessSkill = null;
-		$scope.adjective = null;
-		$scope.data.gender = null;
+		$scope.data = {};
 	}
 });

@@ -19,35 +19,39 @@
 			</div>
 		</header>
 		<section class='input' ng-show="showInputBoxes">
-			<label for="male">Male</label>
-			<input type="radio" name="gender" ng-model="data.gender" value="he" />
-			<label for="female">Female</label>
-			<input type="radio" name="gender" ng-model="data.gender" value="she" /><br>
-			<h1>Provide the following words:</h1>
-			<form name="madLibsForm" required>
+			<form name="madLibsForm" novalidate>
+				<label for="male">Male</label>
+				<input type="radio" name="gender" ng-model="data.gender" value="he" required/>
+				<label for="female">Female</label>
+				<input type="radio" name="gender" ng-model="data.gender" value="she" required/><br>
+				<h1>Provide the following words:</h1>
 				<div class="row">
-					<input type="text" ng-model="name" placeholder="Name">
-					<input type="text" ng-model="dirtyTask" placeholder="Dirty Task">
-					<input type="text" ng-model="obnoxiousCelebrity" placeholder="Obnoxious Celebrity">
+					<input type="text" ng-model="data.name" placeholder="Name" required>
+					<input type="text" ng-model="data.dirtyTask" placeholder="Dirty Task" required>
+					<input type="text" ng-model="data.obnoxiousCelebrity" placeholder="Obnoxious Celebrity" required>
 				</div>
 				<div class="row">
-					<input type="text" ng-model="jobTitle" placeholder="Job Title">
-					<input type="text" ng-model="celebrity" placeholder="Celebrity">
-					<input type="text" ng-model="hugeNumber" placeholder="Huge Number">
+					<input type="text" ng-model="data.jobTitle" placeholder="Job Title" required>
+					<input type="text" ng-model="data.celebrity" placeholder="Celebrity" required>
+					<input type="number" ng-model="data.hugeNumber" placeholder="Huge Number" required>
 				</div>
 				<div class="row">
-					<input type="text" ng-model="tediousTask" placeholder="Tedious Task">
-					<input type="text" ng-model="uselessSkill" placeholder="Useless Skill">
-					<input type="text" ng-model="adjective" placeholder="Adjective">
+					<input type="text" ng-model="data.tediousTask" placeholder="Tedious Task" required>
+					<input type="text" ng-model="data.uselessSkill" placeholder="Useless Skill" required>
+					<input type="text" ng-model="data.adjective" placeholder="Adjective" required>
 				</div>
 				<br />
 				<hr />
-				<button class='generateButton' ng-click="hideInputShowOutput()">Generate my Mad Lib</button>
+				<div class="errorMessages">
+					<p ng-if="submitted && madLibsForm.$error.required">Make sure all fields are filled out!</p>
+					<p ng-if="submitted && madLibsForm.gender.$error.required">Choose a gender!</p>
+				</div>
+				<button class='generateButton' ng-click="hideInputShowOutput()" >Generate my Mad Lib</button>
 			</form>
 		</section>
 		<section class='output' ng-show="showMadLibs">
-			<p>{{ name }} was a {{jobTitle}} who loved technology. Although {{data.gender}} loved parts of the job, {{data.gender}} absolutely hated {{tediousTask}} and {{dirtyTask}}. So, {{name}} met with a life mentor, {{celebrity}}, who said to study {{uselessSkill}} at a university. The local University didn't offer a course on {{uselessSkill}} so {{data.gender}} studied hardware instead.</p>
-			<p>What a great decision! With these new skills, {{ name }} built a(n) {{adjective}} robot named {{obnoxiousCelebrity}} that not only loved {{dirtyTask}} but did it {{hugeNumber}} times faster.</p>
+			<p>{{data.name}} was a {{data.jobTitle}} who loved technology. Although {{data.gender}} loved parts of the job, {{data.gender}} absolutely hated {{data.tediousTask}} and {{data.dirtyTask}}. So, {{data.name}} met with a life mentor, {{data.celebrity}}, who said to study {{data.uselessSkill}} at a university. The local University didn't offer a course on {{data.uselessSkill}} so {{data.gender}} studied hardware instead.</p>
+			<p>What a great decision! With these new skills, {{data.name}} built a(n) {{data.adjective}} robot named {{data.obnoxiousCelebrity}} that not only loved {{data.dirtyTask}} but did it {{data.hugeNumber}} times faster.</p>
 			<br />
 			<hr />
 			<button class='newGameButton' ng-click="startNewGame()">New Game</button>

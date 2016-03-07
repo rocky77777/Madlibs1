@@ -87,6 +87,12 @@ height: 50px;
 width: 180px;
 }
 
+.errorMessages {
+	float: left;
+	color: red;
+	background-color: yellow;
+}
+
 /*-----------------------
 buttons
 -----------------------*/
