@@ -104,3 +104,25 @@ buttons
 	padding: 10px;
 	font-size: 1em;
 }
+
+/*--------------------------
+animations
+--------------------------*/
+
+.paragraphs {
+  transition: all linear 5s;
+}
+
+.paragraphs.ng-enter,
+.paragraphs.ng-leave.ng-leave-active {
+  margin-left: -1000px;
+  opacity: 0;
+  font-size: 0px;
+}
+
+.paragraphs.ng-leave,
+.paragraphs.ng-enter.ng-enter-active {
+  margin-left: 0px;
+  opacity: 1;
+  font-size: 25px;
+}

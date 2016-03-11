@@ -1,4 +1,4 @@
-angular.module("myApp", [])
+angular.module("myApp", ['ngAnimate'])
 .controller("myCtrl", function($scope) {
 	$scope.data = {};
 	$scope.submitted = false;
@@ -21,5 +21,6 @@ angular.module("myApp", [])
 		$scope.showMadLibs = false;
 		$scope.showInputBoxes = true;
 		$scope.data = {};
+		$scope.show = false;
 	}
 });
